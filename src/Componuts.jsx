@@ -454,8 +454,9 @@ export default function Componuts() {
       obj.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredData(filterData);
-  }, [searchTerm, data]);
-  
+  }, [searchTerm]);
+
+
   return (
     <>
       <div className="p-4">
@@ -490,7 +491,7 @@ export default function Componuts() {
         </div>
 		
         {searchTerm && filteredData.length === 0 && (
-          <div className="text-center mt-10 text-gray-500">
+          <div className="text-center text-4xl mt-10 text-gray-500">
             No matching results found.
           </div>
         )}
