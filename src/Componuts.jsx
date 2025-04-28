@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { MdOutlineStarPurple500 } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
 export default function Componuts() {
 
@@ -449,6 +450,8 @@ export default function Componuts() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredData, setFilteredData] = useState(data); 
 
+ 
+
   useEffect(() => {
     const filterData = data.filter((obj) =>
       obj.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -460,13 +463,13 @@ export default function Componuts() {
   return (
     <>
       <div className="p-4">
-        <section className="mb-6 w-64">
+        <section className="mb-6  flex justify-center content-center ">
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Enter your restaurant"
-            className="border p-2 rounded-2xl"
+            className="border p-2 rounded-2xl w-85"
           />
         </section>
         <section className="flex justify-end place-items-end">
@@ -474,6 +477,7 @@ export default function Componuts() {
             type="number"
             placeholder="Ratings"
             className="p-2 border rounded-2xl mb-10"
+			
           />
         </section>
 
@@ -483,6 +487,10 @@ export default function Componuts() {
               <h2 className="card-title text-xl font-bold">{item.name}</h2>
               <p className='flex gap-1'><FaMapMarkerAlt />{item.address}</p>
               <p>Rating: {item.rating}</p>
+			  <div className="flex mt-2 text-amber-400">
+			    <MdOutlineStarPurple500 className='text-amber-300' /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 /><MdOutlineStarPurple500 />
+
+			  </div>
               <div className="card-actions justify-end mt-4">
                 <button className="btn btn-primary">Buy Now</button>
               </div>
